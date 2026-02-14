@@ -1,0 +1,5 @@
+feeder_fund_id,master_fund_id,confidence,comment
+TH_FEEDER_MAIN,F_MASTER_C,1.00,full mapping
+TH_FEEDER_HALF,F_MASTER_B,0.50,partial mapping via confidence
+TH_FEEDER_CYCLE,F_CYCLE_1,1.00,cycle traversal test
+TH_FEEDER_MISSING,,0.80,invalid_missing_master

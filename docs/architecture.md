@@ -24,3 +24,7 @@ The engine follows an ELT flow:
 
 - Prefect flow entrypoint: `pipelines/prefect/run_refresh_flow.py`
 - Flow sequence: smoke test -> staging build -> mart build
+
+## Contracts
+
+- Raw input schema contract: `docs/data_contract.md`

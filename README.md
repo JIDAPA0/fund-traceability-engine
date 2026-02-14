@@ -62,3 +62,12 @@ Default database names in `.env.example`:
 - `sql/` database DDL and indexes
 - `tests/` unit/integration tests
 - `docs/` architecture and data model docs
+
+## Data Contract
+
+- Raw-layer contract is documented at `docs/data_contract.md`.
+- Use sample raw inputs in `data/samples/` while real upstream data is not ready.
+
+## Unit Tests
+
+- Run: `python3 -m unittest discover -s tests/unit -p 'test_*.py'`

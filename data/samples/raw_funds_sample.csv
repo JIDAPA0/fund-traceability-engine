@@ -1,0 +1,6 @@
+fund_id,fund_name,source,currency
+F_MASTER_A,Global Equity Master A,global,USD
+F_MASTER_B,Global Balanced Master B,global,USD
+F_MASTER_C,Wrapper Master C,global,USD
+F_CYCLE_1,Cycle Fund 1,global,USD
+F_CYCLE_2,Cycle Fund 2,global,USD

@@ -1,0 +1,10 @@
+fund_id,asset_id,asset_name,asset_type,weight,notes
+F_MASTER_A,EQ_US_TECH,US Tech Basket,equity,0.60,terminal asset
+F_MASTER_A,EQ_EU_BLUECHIP,EU Bluechip Basket,equity,0.40,terminal asset
+F_MASTER_B,F_MASTER_A,Master A passthrough,fund,0.70,multilayer level 2
+F_MASTER_B,BOND_GOV_10Y,Global Gov Bond,bond,0.30,terminal asset
+F_MASTER_C,F_MASTER_B,Master B passthrough,fund,1.00,multilayer level 1
+F_CYCLE_1,F_CYCLE_2,Cycle hop 1,fund,1.00,cycle start
+F_CYCLE_2,F_CYCLE_1,Cycle hop 2,fund,1.00,cycle return
+F_MASTER_A,,Missing asset id,equity,0.05,invalid_missing_asset_id
+F_MASTER_A,EQ_INVALID_WEIGHT,Invalid Weight,equity,abc,invalid_non_numeric_weight
