@@ -108,3 +108,7 @@ Install UI extra:
 Run web UI:
 
 - `python3 pipelines/run_local_search_web_ui.py`
+
+Optional: upload sample AUM mapping to see notional values in charts:
+
+- `data/samples/fund_aum_sample.csv`

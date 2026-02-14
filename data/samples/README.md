@@ -11,6 +11,7 @@ Files:
 - `raw_holdings_sample_with_edge_cases.csv`: multilayer graph, cycle, missing/invalid rows
 - `raw_fund_links_sample_with_edge_cases.csv`: feeder->master links with confidence + invalid row
 - `expected_true_exposure_sample.csv`: expected exposure snapshot for manual sanity checks
+- `fund_aum_sample.csv`: optional AUM mapping (fund_id,aum) for showing notional values in the web UI
 
 Demo Flow:
 
@@ -29,3 +30,4 @@ Optional visual debug:
   - `python3 pipelines/run_local_search_ui.py`
 - Open local web search UI (recommended):
   - `python3 pipelines/run_local_search_web_ui.py`
+  - Upload AUM sample: `data/samples/fund_aum_sample.csv`
