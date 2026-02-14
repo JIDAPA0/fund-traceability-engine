@@ -9,6 +9,11 @@ The engine follows an ELT flow:
 4. Build trace paths and compute effective exposure.
 5. Write consumer-friendly exposure tables into mart schema.
 
+## Database Roles
+
+- `localhost:3306` (`global_funds`): `global_funds_raw`, `global_funds_staging`, `global_funds_mart`
+- `localhost:3307` (`fund_traceability`): `fund_traceability_staging`, `fund_traceability_mart`
+
 ## Runtime Jobs
 
 - `pipelines/run_build_staging.py`

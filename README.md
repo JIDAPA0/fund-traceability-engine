@@ -8,9 +8,24 @@ Engine for combining Thai and global fund datasets and calculating true exposure
 2. Install dependencies:
    - `pip install -e .`
 3. Build staging:
-   - `python pipelines/run_build_staging.py`
+   - `python3 pipelines/run_build_staging.py`
 4. Build mart:
-   - `python pipelines/run_build_mart.py`
+   - `python3 pipelines/run_build_mart.py`
+5. Optional DB connectivity smoke test:
+   - `python3 pipelines/run_db_smoke_test.py`
+
+## Database Topology
+
+- `3306` (`global_funds` server): global-source data stores
+- `3307` (`fund_traceability` server): feeder-master linking and exposure outputs
+
+Default database names in `.env.example`:
+
+- `global_funds_raw`
+- `global_funds_staging`
+- `global_funds_mart`
+- `fund_traceability_staging`
+- `fund_traceability_mart`
 
 ## Project Layout
 
