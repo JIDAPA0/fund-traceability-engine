@@ -96,3 +96,15 @@ Desktop debug tool for exploring staging data with:
 Run:
 
 - `python3 pipelines/run_local_search_ui.py`
+
+## Local Search UI (Web Recommended)
+
+Recommended visual debugger (web style, richer UX) using Streamlit.
+
+Install UI extra:
+
+- `pip install -e ".[ui]"`
+
+Run web UI:
+
+- `python3 pipelines/run_local_search_web_ui.py`

@@ -20,6 +20,9 @@ dependencies = [
 orchestration = [
   "prefect>=2.14.0",
 ]
+ui = [
+  "streamlit>=1.38.0",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}

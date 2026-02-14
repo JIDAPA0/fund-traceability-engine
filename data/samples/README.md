@@ -27,3 +27,5 @@ Optional visual debug:
 
 - Open local desktop search UI:
   - `python3 pipelines/run_local_search_ui.py`
+- Open local web search UI (recommended):
+  - `python3 pipelines/run_local_search_web_ui.py`
