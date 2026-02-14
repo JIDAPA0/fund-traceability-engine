@@ -22,3 +22,8 @@ Demo Flow:
    - `python3 pipelines/run_build_mart.py --as-of-date 2026-02-14 --max-depth 6`
 4. Validate actual mart output against expected sample:
    - `python3 pipelines/run_validate_sample_expectation.py --as-of-date 2026-02-14`
+
+Optional visual debug:
+
+- Open local desktop search UI:
+  - `python3 pipelines/run_local_search_ui.py`

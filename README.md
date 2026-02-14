@@ -82,3 +82,17 @@ Default database names in `.env.example`:
    - `python3 pipelines/run_build_mart.py --as-of-date 2026-02-14 --max-depth 6`
 4. Validate mart output against expected sample:
    - `python3 pipelines/run_validate_sample_expectation.py --as-of-date 2026-02-14`
+
+## Local Search UI (Tkinter)
+
+Desktop debug tool for exploring staging data with:
+
+- dataset switcher (`stg_funds`, `stg_holdings`, `stg_fund_links`)
+- live keyword search
+- filters by `as_of_date` and `source`
+- sortable/paginated grid
+- row detail inspector + CSV export
+
+Run:
+
+- `python3 pipelines/run_local_search_ui.py`
