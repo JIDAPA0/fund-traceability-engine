@@ -19,3 +19,8 @@ The engine follows an ELT flow:
 - `pipelines/run_build_staging.py`
 - `pipelines/run_build_mart.py`
 - `pipelines/run_refresh_all.py`
+
+## Orchestration
+
+- Prefect flow entrypoint: `pipelines/prefect/run_refresh_flow.py`
+- Flow sequence: smoke test -> staging build -> mart build

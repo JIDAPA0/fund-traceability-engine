@@ -14,6 +14,34 @@ Engine for combining Thai and global fund datasets and calculating true exposure
 5. Optional DB connectivity smoke test:
    - `python3 pipelines/run_db_smoke_test.py`
 
+## Prefect Orchestration
+
+Install orchestration extras:
+
+- `pip install -e ".[orchestration]"`
+
+Run full orchestration flow (smoke test -> staging -> mart):
+
+- `python3 pipelines/prefect/run_refresh_flow.py --as-of-date 2026-02-14 --max-depth 6`
+
+Skip DB smoke test in flow:
+
+- `python3 pipelines/prefect/run_refresh_flow.py --skip-smoke-test`
+
+## Docker (Prepared)
+
+Build image:
+
+- `docker build -t fund-traceability-engine:local .`
+
+Run standard pipeline job:
+
+- `docker compose --profile job up --build engine-job`
+
+Run Prefect flow job:
+
+- `docker compose --profile prefect up --build prefect-flow`
+
 ## Database Topology
 
 - `3306` (`global_funds` server): global-source data stores

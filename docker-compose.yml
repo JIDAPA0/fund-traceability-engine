@@ -1,0 +1,32 @@
+services:
+  engine-job:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fund-traceability-engine:local
+    env_file:
+      - .env
+    command: ["python", "pipelines/run_refresh_all.py"]
+    volumes:
+      - ./outputs:/app/outputs
+    profiles: ["job"]
+
+  prefect-flow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fund-traceability-engine:local
+    env_file:
+      - .env
+    command:
+      [
+        "python",
+        "pipelines/prefect/run_refresh_flow.py",
+        "--as-of-date",
+        "2026-02-14"
+      ]
+    environment:
+      PREFECT_LOGGING_LEVEL: INFO
+    volumes:
+      - ./outputs:/app/outputs
+    profiles: ["prefect"]
