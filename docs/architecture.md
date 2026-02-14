@@ -19,6 +19,8 @@ The engine follows an ELT flow:
 - `pipelines/run_build_staging.py`
 - `pipelines/run_build_mart.py`
 - `pipelines/run_refresh_all.py`
+- `pipelines/run_load_samples_to_raw.py` (demo bootstrap from sample CSVs)
+- `pipelines/run_validate_sample_expectation.py` (expected vs actual sample assertion)
 
 ## Orchestration
 

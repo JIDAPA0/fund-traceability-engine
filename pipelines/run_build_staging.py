@@ -91,11 +91,11 @@ def _normalize_funds(raw_df: pd.DataFrame, as_of_date: str) -> pd.DataFrame:
     source_col = _pick_column(raw_df, ["source", "source_system", "provider"])
     currency_col = _pick_column(raw_df, ["currency", "currency_code", "ccy"])
 
-    fund_ids = raw_df[fund_id_col].astype(str).str.strip()
+    fund_ids = raw_df[fund_id_col].fillna("").astype(str).str.strip()
     fund_names = (
-        raw_df[name_col].astype(str).str.strip()
+        raw_df[name_col].fillna("").astype(str).str.strip()
         if name_col is not None
-        else raw_df[fund_id_col].astype(str).str.strip()
+        else raw_df[fund_id_col].fillna("").astype(str).str.strip()
     )
     sources = (
         raw_df[source_col].fillna("global").astype(str).str.strip().str.lower()
@@ -140,15 +140,15 @@ def _normalize_holdings(raw_df: pd.DataFrame, as_of_date: str, known_fund_ids: s
     if not weights.empty and weights.max() > 1.0:
         weights = weights / 100.0
 
-    asset_ids = raw_df[asset_id_col].astype(str).str.strip()
+    asset_ids = raw_df[asset_id_col].fillna("").astype(str).str.strip()
     inferred_types = asset_ids.map(lambda asset_id: "fund" if asset_id in known_fund_ids else "other")
 
     normalized = pd.DataFrame(
         {
-            "fund_id": raw_df[fund_id_col].astype(str).str.strip(),
+            "fund_id": raw_df[fund_id_col].fillna("").astype(str).str.strip(),
             "asset_id": asset_ids,
             "asset_name": (
-                raw_df[asset_name_col].astype(str).str.strip()
+                raw_df[asset_name_col].fillna("").astype(str).str.strip()
                 if asset_name_col is not None
                 else asset_ids
             ),
@@ -187,8 +187,8 @@ def _normalize_links(raw_df: pd.DataFrame, as_of_date: str) -> pd.DataFrame:
 
     normalized = pd.DataFrame(
         {
-            "feeder_fund_id": raw_df[feeder_col].astype(str).str.strip(),
-            "master_fund_id": raw_df[master_col].astype(str).str.strip(),
+            "feeder_fund_id": raw_df[feeder_col].fillna("").astype(str).str.strip(),
+            "master_fund_id": raw_df[master_col].fillna("").astype(str).str.strip(),
             "confidence": confidence.clip(lower=0.0, upper=1.0),
             "as_of_date": as_of_date,
         }
