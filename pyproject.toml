@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fund-traceability-engine"
+version = "0.1.0"
+description = "Fund traceability and true exposure calculation engine"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.2.0",
+  "pydantic>=2.6.0",
+  "python-dotenv>=1.0.1",
+  "pymysql>=1.1.0",
+  "sqlalchemy>=2.0.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
