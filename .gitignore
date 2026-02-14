@@ -23,3 +23,6 @@ outputs/logs/*
 outputs/reports/*
 !outputs/logs/.gitkeep
 !outputs/reports/.gitkeep
+
+# Packaging
+*.egg-info/
